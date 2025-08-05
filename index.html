@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Player de Câmera - Diagnóstico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Player de Câmera — Teste / Diagnóstico</h1>
+
+    <section class="settings">
+      <h2>Configurações</h2>
+      <label>Protocol
+        <select id="protocol">
+          <option value="https">https</option>
+          <option value="http">http</option>
+        </select>
+      </label>
+
+      <label>Domain / IP
+        <input id="domain" type="text" value="45.185.64.26" />
+      </label>
+
+      <label>Port (opcional)
+        <input id="port" type="text" placeholder="ex: 8080 — deixe vazio se não usar" />
+      </label>
+
+      <label>Camera / stream id
+        <input id="id" type="text" value="5" />
+      </label>
+
+      <label>User
+        <input id="user" type="text" value="junior" />
+      </label>
+
+      <label>Password
+        <input id="password" type="password" value="123456" />
+      </label>
+
+      <label>Width
+        <input id="width" type="number" value="640" />
+      </label>
+
+      <label>Height
+        <input id="height" type="number" value="360" />
+      </label>
+
+      <div class="actions">
+        <button id="btnInit">Start / Reinitialize</button>
+        <button id="btnTryFetch">Testar Conectividade</button>
+        <button id="btnOpenRoot">Abrir Raiz no navegador</button>
+      </div>
+
+      <p class="hint">Observação: execute via servidor HTTP (ex: <code>python -m http.server</code>) para evitar bloqueios do navegador.</p>
+    </section>
+
+    <section class="player-area">
+      <h2>Player</h2>
+      <!-- O container onde o NuvPlayer deve injetar o player -->
+      <div id="player" class="player-placeholder" aria-label="Player container">Player (vazio)</div>
+
+      <div class="controls-inline">
+        <button id="btnPlay">Play</button>
+        <button id="btnPause">Pause</button>
+        <button id="btnMute">Mute / Unmute</button>
+      </div>
+    </section>
+
+    <section class="debug">
+      <h2>Debug / Logs</h2>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <!-- Biblioteca do player (fornecida pelo fornecedor) -->
+  <script src="https://s2.cdn.tv.br/plugins/nuv-player/nuvplayer.js"></script>
+
+  <!-- Seu script de inicialização e diagnóstico -->
+  <script src="player.js"></script>
+</body>
+</html>

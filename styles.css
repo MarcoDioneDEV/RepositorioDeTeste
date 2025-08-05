@@ -1,0 +1,103 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#1f6feb;
+  --muted:#6b7280;
+  --border:#e6e9ef;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#111827;
+  padding:20px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+}
+.card{
+  width:100%;
+  max-width:980px;
+  background:var(--card);
+  border-radius:10px;
+  padding:18px;
+  box-shadow:0 8px 30px rgba(16,24,40,0.06);
+  border:1px solid var(--border);
+}
+h1{margin:0 0 8px 0;font-size:20px}
+h2{margin:12px 0 8px 0;font-size:15px;color:var(--muted)}
+.settings{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
+  margin-bottom:10px;
+}
+.settings label{
+  display:flex;
+  flex-direction:column;
+  font-size:13px;
+  color:var(--muted);
+}
+.settings input, .settings select{
+  margin-top:6px;
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid var(--border);
+}
+.actions{
+  grid-column:1/-1;
+  display:flex;
+  gap:8px;
+  margin-top:6px;
+}
+.actions button{
+  padding:8px 12px;
+  border-radius:8px;
+  border:0;
+  background:var(--accent);
+  color:white;
+  cursor:pointer;
+}
+.actions button[disabled]{opacity:.6;cursor:not-allowed}
+.hint{grid-column:1/-1;color:var(--muted);font-size:12px;margin-top:6px}
+
+.player-area{
+  margin-top:12px;
+}
+.player-placeholder{
+  width:100%;
+  background:#000;
+  min-height:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#bbb;
+  border-radius:6px;
+  overflow:hidden;
+}
+.controls-inline{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+}
+.controls-inline button{
+  padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:#fff;cursor:pointer;
+}
+.debug{
+  margin-top:14px;
+}
+.log{
+  background:#0f1724;
+  color:#e6eef8;
+  font-family:monospace;
+  padding:12px;
+  border-radius:6px;
+  min-height:120px;
+  max-height:300px;
+  overflow:auto;
+  font-size:12px;
+  line-height:1.4;
+  white-space:pre-wrap;
+}
